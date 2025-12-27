@@ -28,7 +28,7 @@ const HeroSection = () => {
                 1000,
                 "Data Engineer",
                 1000,
-                "UI/UX Designer",
+                "Software Engineer",
                 1000,
               ]}
               wrapper="span"
@@ -37,8 +37,8 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            voluptuous.
+          My career dream is to collaborate with innovative teams who 
+          are passionate about using technology to solve meaningful problems and create positive impact through elegant web applications and data-driven solutions.
           </p>
           <div>
             <Link
