@@ -2,6 +2,7 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
+import { HiDownload } from "react-icons/hi";
 
 const TAB_DATA = [
   {
@@ -9,12 +10,24 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
+        <div className="grid grid-cols-1 gap-4">
+          <div>
+            <h3 className="font-semibold text-white mb-1">Programming</h3>
+            <p className="text-gray-400 text-sm lg:text-base">Python, C#, C, JavaScript</p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-white mb-1">Web Development</h3>
+            <p className="text-gray-400 text-sm lg:text-base">Nextjs, Django, Flask, .NET, HTML/CSS, Bootstrap, Blazor</p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-white mb-1">Databases</h3>
+            <p className="text-gray-400 text-sm lg:text-base">SQL Server, MySQL, PostgreSQL, ER Modeling</p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-white mb-1">Tools</h3>
+            <p className="text-gray-400 text-sm lg:text-base">p5.js, git, API</p>
+          </div>
+        </div>
       </ul>
     ),
   },
@@ -23,19 +36,91 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <div className="grid grid-cols-1 gap-6">
+          <div>
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
+              <h3 className="font-semibold text-white">EXCHANGE – University of Sydney Technology</h3>
+              <span className="text-gray-400 text-sm">Australia</span>
+            </div>
+            <div className="flex flex-col sm:flex-row sm:justify-between mb-2">
+              <p className="text-gray-400 text-sm">Grade: A</p>
+              <p className="text-gray-400 text-sm">07/2025 - 12/2025</p>
+            </div>
+            <p className="text-gray-400 text-sm">
+              Courses: Interactive Media, Image Processing, C Programming, Application Development with .NET
+            </p>
+          </div>
+
+          <div>
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
+              <h3 className="font-semibold text-white">BACHELOR OF DATA SCIENCE – BI Norwegian Business School</h3>
+              <span className="text-gray-400 text-sm">Norway</span>
+            </div>
+            <div className="flex flex-col sm:flex-row sm:justify-between mb-2">
+              <p className="text-gray-400 text-sm">Grade: A</p>
+              <p className="text-gray-400 text-sm">08/2023 - 06/2026</p>
+            </div>
+            <p className="text-gray-400 text-sm">
+              Courses: Machine Learning, Data Extraction and Visualization, Databases, Statistics with Programming, Web Development
+            </p>
+          </div>
+
+          <div>
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
+              <h3 className="font-semibold text-white">BACHELOR OF ENGLISH – SiChuan University of Science and Engineering</h3>
+              <span className="text-gray-400 text-sm">China</span>
+            </div>
+            <div className="flex flex-col sm:flex-row sm:justify-between mb-2">
+              <p className="text-gray-400 text-sm">Grade: 3.14/4</p>
+              <p className="text-gray-400 text-sm">08/2015 - 06/2019</p>
+            </div>
+          </div>
+        </div>
       </ul>
     ),
   },
   {
-    title: "Certifications",
-    id: "certifications",
+    title: "Recognitions",
+    id: "Recognitions",
     content: (
-      <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
-      </ul>
+      <div className="grid grid-cols-1 gap-6">
+        <div>
+          <a
+            href="/recommendations/professor-emil-recommendation.pdf"
+            download="Professor_Emil_Recommendation.pdf"
+            className="group"
+          >
+            <h3 className="font-semibold text-white mb-2 hover:text-primary-400 transition-colors flex items-center gap-2">
+              Recommendation letter from Professor Emil
+              <HiDownload className="w-4 h-4" />
+            </h3>
+          </a>
+          <p className="text-gray-400 text-sm lg:text-base italic border-l-2 border-primary-500 pl-4">
+            "During my four years as an assistant professor at BI Norwegian Business School in Oslo,
+            I have lectured hundreds of students, both on the bachelor's and the master's level.
+            Qian Zhao belong to the top one percent of students I have encountered during these five years."
+          </p>
+        </div>
+        <div>
+          <a
+            href="/recommendations/professor-weiting-recommendation.pdf"
+            download="Professor_Weiting_Recommendation.pdf"
+            className="group"
+          >
+            <h3 className="font-semibold text-white mb-2 hover:text-primary-400 transition-colors flex items-center gap-2">
+              Recommendation letter from Professor Weiting
+              <HiDownload className="w-4 h-4" />
+            </h3>
+
+          </a>
+          <p className="text-gray-400 text-sm lg:text-base italic border-l-2 border-primary-500 pl-4">
+            "During our collaboration, Qian has shown her adaptability and responsibility.
+            On several occasions, when urgent situations required her assistance—such as stepping
+            in to support another group—she responded promptly and offered timely help. Because of
+            her reliability and willingness to provide help, I believe that she will work well in a team."
+          </p>
+        </div>
+      </div>
     ),
   },
 ];
@@ -58,11 +143,13 @@ const AboutSection = () => {
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
             I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
+            interactive and responsive web applications. I believe design is more than just making things look pretty -
+            it is about solving real-world problems and creating intuitive experience for users.
+          </p>
+          <p className="text-base lg:text-lg mt-4">
+            I am a quick learner and I am always
             looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            I look forward to bring my skills and passion to your next project.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
@@ -80,11 +167,11 @@ const AboutSection = () => {
               Education{" "}
             </TabButton>
             <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
+              selectTab={() => handleTabChange("Recognitions")}
+              active={tab === "Recognitions"}
             >
               {" "}
-              Certifications{" "}
+              Recognitions{" "}
             </TabButton>
           </div>
           <div className="mt-8">
