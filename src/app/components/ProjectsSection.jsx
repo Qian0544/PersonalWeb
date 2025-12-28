@@ -52,10 +52,11 @@ const projectsData = [
   },
   {
     id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
+    title: "Sound Drawing Tool",
+    description: "A game convert the drawing from user to corresponding instrument sound ",
     image: "/images/projects/6.png",
-    tag: ["All", "Web"],
+    video: "/videos/projects/6.mp4",
+    tag: ["All", "Mobile"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -115,6 +116,7 @@ const ProjectsSection = () => {
               title={project.title}
               description={project.description}
               imgUrl={project.image}
+              videoUrl={project.video} 
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
             />
