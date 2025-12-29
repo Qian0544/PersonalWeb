@@ -34,3 +34,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+"build": "BROWSERSLIST_IGNORE_OLD_DATA=true npm run build"
