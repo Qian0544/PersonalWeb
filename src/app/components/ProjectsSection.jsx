@@ -38,7 +38,7 @@ const projectsData = [
     description: "A smart fiance app built by using blazor",
     image: "/images/projects/4.png",
     tag: ["All", "Mobile"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/Qian0544/PersonalFinanceTrack/",
     previewUrl: "/",
   },
   {
@@ -47,7 +47,7 @@ const projectsData = [
     description: "A webpage for kindergargen to find kid pairs",
     image: "/images/projects/5.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/Qian0544/webpage-for-kindergarden-questionnaire",
     previewUrl: "/",
   },
   {
@@ -57,7 +57,7 @@ const projectsData = [
     image: "/images/projects/6.png",
     video: "/videos/projects/6.mp4",
     tag: ["All", "Mobile"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/Qian0544/1-InteractiveMedia/tree/main/SoundDrawingTool",
     previewUrl: "/",
   },
 ];

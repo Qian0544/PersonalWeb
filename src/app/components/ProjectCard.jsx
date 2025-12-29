@@ -4,6 +4,10 @@ import { HiExternalLink } from "react-icons/hi";
 import Link from "next/link";
 
 const ProjectCard = ({ imgUrl, videoUrl, title, description, gitUrl, previewUrl }) => {
+  // Check if URLs are valid (not "/" or empty)
+  const hasValidGitUrl = gitUrl && gitUrl !== "/";
+  const hasValidPreviewUrl = previewUrl && previewUrl !== "/";
+
   return (
     <div className="bg-[#181818] rounded-xl overflow-hidden">
       {/* Image or Video */}
@@ -34,26 +38,32 @@ const ProjectCard = ({ imgUrl, videoUrl, title, description, gitUrl, previewUrl 
 
         {/* Buttons Row */}
         <div className="flex justify-between items-center">
-          {/* Visit Button - Left */}
-          <Link
-            href={previewUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium flex items-center gap-2 hover:opacity-90 transition-opacity"
-          >
-            Visit
-            <HiExternalLink className="w-5 h-5" />
-          </Link>
+          {/* Visit Button - Left (only show if valid URL) */}
+          {hasValidPreviewUrl ? (
+            <Link
+              href={previewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium flex items-center gap-2 hover:opacity-90 transition-opacity"
+            >
+              Visit
+              <HiExternalLink className="w-5 h-5" />
+            </Link>
+          ) : (
+            <div></div> // Empty div for spacing
+          )}
 
-          {/* GitHub Icon - Right */}
-          <Link
-            href={gitUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 rounded-full bg-[#2d2d2d] flex items-center justify-center hover:bg-[#3d3d3d] transition-colors"
-          >
-            <FaGithub className="w-6 h-6 text-white" />
-          </Link>
+          {/* GitHub Icon - Right (only show if valid URL) */}
+          {hasValidGitUrl && (
+            <Link
+              href={gitUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 rounded-full bg-[#2d2d2d] flex items-center justify-center hover:bg-[#3d3d3d] transition-colors"
+            >
+              <FaGithub className="w-6 h-6 text-white" />
+            </Link>
+          )}
         </div>
       </div>
     </div>
