@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    unoptimized: true, // Add this line
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+}
 
 module.exports = nextConfig
-
-module.exports = {
-    eslint: {
-      ignoreDuringBuilds: true,
-    },
-  }
