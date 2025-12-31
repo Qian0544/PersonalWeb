@@ -12,7 +12,7 @@ const projectsData = [
     image: "/images/projects/1.png",
     tag: ["All", "Web"],
     gitUrl: "/",
-    previewUrl: "qianzhao.online",
+    previewUrl: "https://qianzhao.online/",
   },
   {
     id: 2,
