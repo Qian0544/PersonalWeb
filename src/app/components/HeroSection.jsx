@@ -6,6 +6,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const HeroSection = () => {
+  const handleHireClick = (e) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -37,16 +42,16 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-          My career dream is to collaborate with innovative teams who 
-          are passionate about using technology to solve meaningful problems and create positive impact through elegant web applications and data-driven solutions.
+            My career dream is to collaborate with innovative teams who
+            are passionate about using technology to solve meaningful problems and create positive impact through elegant web applications and data-driven solutions.
           </p>
           <div>
-            <Link
-              href="/#contact"
+            <button
+              onClick={handleHireClick}
               className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
             >
               Hire Me
-            </Link>
+            </button>
             <Link
               href="/CV.pdf"
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
