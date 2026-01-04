@@ -42,8 +42,8 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            My career dream is to collaborate with innovative teams who
-            are passionate about using technology to solve meaningful problems and create positive impact through elegant web applications and data-driven solutions.
+          I turn complex problems into elegant solutions. Passionate about creating 
+          data-driven web applications that make a difference.
           </p>
           <div>
             <button
