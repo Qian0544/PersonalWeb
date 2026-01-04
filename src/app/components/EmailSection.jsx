@@ -54,7 +54,7 @@ const EmailSection = () => {
           {" "}
           I&apos;m currently looking for new opportunities, my inbox is always
           open. Whether you have a question or just want to say hi, I&apos;ll
-          try my best to get back to you!
+         get back to you ASAP!
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href="mailto:qianzhao0544@gmail.com">
