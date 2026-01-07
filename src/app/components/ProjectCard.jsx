@@ -21,7 +21,7 @@ const ProjectCard = ({ imgUrl, videoUrl, title, description, gitUrl, previewUrl 
             className="h-full w-full object-cover"
           >
             <source src={videoUrl} type="video/mp4" />
-            Your browser does not support the video tag.
+            Nettleseren din støtter ikke videotaggen.
           </video>
         </div>
       ) : (
@@ -46,7 +46,7 @@ const ProjectCard = ({ imgUrl, videoUrl, title, description, gitUrl, previewUrl 
               rel="noopener noreferrer"
               className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium flex items-center gap-2 hover:opacity-90 transition-opacity"
             >
-              Visit
+              Besøk
               <HiExternalLink className="w-5 h-5" />
             </Link>
           ) : (

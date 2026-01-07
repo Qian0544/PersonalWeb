@@ -7,63 +7,63 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "My Personal Portfolio website - keep updating",
+    title: "React Portfolio-nettside",
+    description: "Min personlige portfolio-nettside - oppdateres jevnlig",
     image: "/images/projects/1.png",
-    tag: ["All", "Web"],
+    tag: ["Alle", "Web"],
     gitUrl: "/",
     previewUrl: "https://qianzhao.no/",
   },
   {
     id: 2,
-    title: "European Student Dorm Swap Platform",
-    description: "A web platform enabling European students to exchange dormitories while doing exchange programs and traveling",
+    title: "Europeisk studenthybelbytteplattform",
+    description: "En nettplattform som gjør det mulig for europeiske studenter å bytte hybler når de er på utveksling eller reiser",
     image: "/images/projects/2.png",
-    tag: ["All", "Web"],
+    tag: ["Alle", "Web"],
     gitUrl: "/",
     previewUrl: "https://eurodormswap.com/",
   },
   {
     id: 3,
-    title: "Cleaning Company Website",
-    description: "An official website for a cleaning service company in Nittedal (Norway)",
+    title: "Nettside for vaskefirma",
+    description: "Offisiell nettside for et vaskefirma i Nittedal (Norge)",
     image: "/images/projects/3.png",
-    tag: ["All", "Web"],
+    tag: ["Alle", "Web"],
     gitUrl: "/",
     previewUrl: "https://www.dagligrenholdnittedal.no/",
   },
   {
     id: 4,
-    title: "Personal Finance Tracker",
-    description: "Smart finance management application built with Blazor framework",
+    title: "App for økonomistyring",
+    description: "Smart økonomiapp utviklet med Blazor-rammeverket",
     image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
+    tag: ["Alle", "Mobil"],
     gitUrl: "https://github.com/Qian0544/PersonalFinanceTrack/",
     previewUrl: "/",
   },
   {
     id: 5,
-    title: "Student Academic Preference & Study Pairing System",
-    description: "Educational tool for analyzing student course preferences and facilitating study partner matching in primary school",
+    title: "System for studentpreferanser og studiepar-matching",
+    description: "Pedagogisk verktøy for å analysere studenters emneprioritering og legge til rette for studiepartnere i grunnskolen",
     image: "/images/projects/5.png",
-    tag: ["All", "Web"],
+    tag: ["Alle", "Web"],
     gitUrl: "https://github.com/Qian0544/webpage-for-kindergarden-questionnaire",
     previewUrl: "/",
   },
   {
     id: 6,
-    title: "Sound Drawing Interactive Tool",
-    description: "A creative game that converts user drawings into corresponding musical instrument sounds ",
+    title: "Lydtegneverktøy",
+    description: "Et kreativt spill som konverterer brukertegninger til tilsvarende instrumentlyder",
     image: "/images/projects/6.png",
     video: "/videos/projects/6.mp4",
-    tag: ["All", "Mobile"],
+    tag: ["Alle", "Mobil"],
     gitUrl: "https://github.com/Qian0544/1-InteractiveMedia/tree/main/SoundDrawingTool",
     previewUrl: "/",
   },
 ];
 
 const ProjectsSection = () => {
-  const [tag, setTag] = useState("All");
+  const [tag, setTag] = useState("Alle");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -83,13 +83,13 @@ const ProjectsSection = () => {
   return (
     <section id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        My Projects
+        Mine prosjekter
       </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
+          name="Alle"
+          isSelected={tag === "Alle"}
         />
         <ProjectTag
           onClick={handleTagChange}
@@ -98,8 +98,8 @@ const ProjectsSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
+          name="Mobil"
+          isSelected={tag === "Mobil"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
