@@ -8,7 +8,7 @@ import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 const navLinks = [
   {
-    title: "Om meg",
+    title: "Om",
     path: "#about",
   },
   {
