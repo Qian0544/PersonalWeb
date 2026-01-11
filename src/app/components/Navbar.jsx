@@ -24,22 +24,22 @@ const navLinks = [
 const socialLinks = [
   {
     icon: FaGithub,
-    url: "https://github.com/Qian0544",
+    url: "http://github.com/Qian0544",
     label: "GitHub",
   },
   {
     icon: FaLinkedin,
-    url: "https://www.linkedin.com/in/qian-zhao-590789293/",
+    url: "http://www.linkedin.com/in/qian-zhao-590789293/",
     label: "LinkedIn",
   },
   {
     icon: FaWhatsapp,
-    url: "https://wa.me/+4793995384", // Replace with your WhatsApp number
+    url: "http://wa.me/+4793995384", // Replace with your WhatsApp number
     label: "WhatsApp",
   },
   {
     icon: FaInstagram,
-    url: "https://instagram.com/qian_amiao",
+    url: "http://instagram.com/qian_amiao",
     label: "Instagram",
   },
 ];

@@ -12,7 +12,7 @@ const projectsData = [
     image: "/images/projects/1.png",
     tag: ["Alle", "Web"],
     gitUrl: "/",
-    previewUrl: "https://qianzhao.no/",
+    previewUrl: "http://qianzhao.no/",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const projectsData = [
     image: "/images/projects/2.png",
     tag: ["Alle", "Web"],
     gitUrl: "/",
-    previewUrl: "https://eurodormswap.com/",
+    previewUrl: "http://eurodormswap.com/",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const projectsData = [
     image: "/images/projects/3.png",
     tag: ["Alle", "Web"],
     gitUrl: "/",
-    previewUrl: "https://www.dagligrenholdnittedal.no/",
+    previewUrl: "http://www.dagligrenholdnittedal.no/",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const projectsData = [
     description: "Smart økonomiapp utviklet med Blazor-rammeverket",
     image: "/images/projects/4.png",
     tag: ["Alle", "Mobil"],
-    gitUrl: "https://github.com/Qian0544/PersonalFinanceTrack/",
+    gitUrl: "http://github.com/Qian0544/PersonalFinanceTrack/",
     previewUrl: "/",
   },
   {
@@ -47,7 +47,7 @@ const projectsData = [
     description: "Pedagogisk verktøy for å analysere studenters emneprioritering og legge til rette for studiepartnere i grunnskolen",
     image: "/images/projects/5.png",
     tag: ["Alle", "Web"],
-    gitUrl: "https://github.com/Qian0544/webpage-for-kindergarden-questionnaire",
+    gitUrl: "http://github.com/Qian0544/webpage-for-kindergarden-questionnaire",
     previewUrl: "/",
   },
   {
@@ -57,7 +57,7 @@ const projectsData = [
     image: "/images/projects/6.png",
     video: "/videos/projects/6.mp4",
     tag: ["Alle", "Mobil"],
-    gitUrl: "https://github.com/Qian0544/1-InteractiveMedia/tree/main/SoundDrawingTool",
+    gitUrl: "http://github.com/Qian0544/1-InteractiveMedia/tree/main/SoundDrawingTool",
     previewUrl: "/",
   },
 ];
