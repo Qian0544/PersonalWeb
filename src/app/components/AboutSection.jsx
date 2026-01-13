@@ -145,7 +145,7 @@ const AboutSection = () => {
           <h2 className="text-4xl font-bold text-white mb-4">Om meg</h2>
           <p className="text-base lg:text-lg">
           Jeg er en webutvikler med stor lidenskap for å skape interaktive og responsive webapplikasjoner. 
-          Jeg synes design handler om mer enn bare å få ting til å se bra ut – det handler om å løse reelle problemer 
+          For meg, design handler om mer enn bare å få ting til å se bra ut – det handler om å løse reelle problemer 
           og skape brukervennlige, intuitive opplevelser.
           </p>
           <p className="text-base lg:text-lg mt-4">

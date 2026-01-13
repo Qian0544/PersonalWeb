@@ -43,7 +43,7 @@ const HeroSection = () => {
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
           Jeg jobber med å gjøre komplekse problemstillinger om til funksjonelle og gjennomtenkte løsninger. 
-          Har stor lidenskap for å utvikle datadrevne webapplikasjoner som skaper verdi.
+          Min lidenskap er å utvikle datadrevne webapplikasjoner som skaper verdi.
           </p>
           <div>
             <button
