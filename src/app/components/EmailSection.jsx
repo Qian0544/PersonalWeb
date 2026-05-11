@@ -1,13 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import GithubIcon from "../../../public/github-icon.svg";
-import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
-import Image from "next/image";
-import { MdEmail } from "react-icons/md"
+import { MdEmail } from "react-icons/md";
+import { useLanguage } from "../context/LanguageContext";
+import translations from "../translations";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const { lang } = useLanguage();
+  const t = translations[lang].contact;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,26 +17,13 @@ const EmailSection = () => {
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
-
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
+    const response = await fetch("/api/send", {
       method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
-
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
 
     if (response.status === 200) {
-      console.log("Message sent.");
       setEmailSubmitted(true);
     }
   };
@@ -47,14 +35,8 @@ const EmailSection = () => {
     >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">
-          Ta kontakt
-        </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
-          {" "}
-          Jeg er for tiden på utkikk etter nye muligheter, og innboksen min er alltid
-          åpen. Enten du har et spørsmål eller bare vil si hei, svarer jeg så fort som mulig!
-        </p>
+        <h5 className="text-xl font-bold text-white my-2">{t.title}</h5>
+        <p className="text-[#ADB7BE] mb-4 max-w-md">{t.description}</p>
         <div className="socials flex flex-row gap-2">
           <Link href="mailto:qianzhao0544@gmail.com">
             <MdEmail className="h-12 w-12 text-white hover:text-primary-400 transition-colors" />
@@ -63,17 +45,12 @@ const EmailSection = () => {
       </div>
       <div>
         {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">
-            E-post sendt!
-          </p>
+          <p className="text-green-500 text-sm mt-2">{t.successMsg}</p>
         ) : (
           <form className="flex flex-col" onSubmit={handleSubmit}>
             <div className="mb-6">
-              <label
-                htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
-              >
-                Din e-post
+              <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">
+                {t.emailLabel}
               </label>
               <input
                 name="email"
@@ -81,15 +58,12 @@ const EmailSection = () => {
                 id="email"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="deg@example.com"
+                placeholder="you@example.com"
               />
             </div>
             <div className="mb-6">
-              <label
-                htmlFor="subject"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Emne
+              <label htmlFor="subject" className="text-white block text-sm mb-2 font-medium">
+                {t.subjectLabel}
               </label>
               <input
                 name="subject"
@@ -97,28 +71,25 @@ const EmailSection = () => {
                 id="subject"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Hei"
+                placeholder={t.subjectPlaceholder}
               />
             </div>
             <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Melding
+              <label htmlFor="message" className="text-white block text-sm mb-2 font-medium">
+                {t.messageLabel}
               </label>
               <textarea
                 name="message"
                 id="message"
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="La oss snakke om..."
+                placeholder={t.messagePlaceholder}
               />
             </div>
             <button
               type="submit"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
             >
-              Send melding
+              {t.sendBtn}
             </button>
           </form>
         )}

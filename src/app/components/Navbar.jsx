@@ -5,52 +5,30 @@ import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from "react-icons/fa";
-
-const navLinks = [
-  {
-    title: "Om",
-    path: "#about",
-  },
-  {
-    title: "Prosjekter",
-    path: "#projects",
-  },
-  {
-    title: "Kontakt",
-    path: "#contact",
-  },
-];
+import { useLanguage } from "../context/LanguageContext";
+import translations from "../translations";
 
 const socialLinks = [
-  {
-    icon: FaGithub,
-    url: "http://github.com/Qian0544",
-    label: "GitHub",
-  },
-  {
-    icon: FaLinkedin,
-    url: "http://www.linkedin.com/in/qian-zhao-590789293/",
-    label: "LinkedIn",
-  },
-  {
-    icon: FaWhatsapp,
-    url: "http://wa.me/+4793995384", // Replace with your WhatsApp number
-    label: "WhatsApp",
-  },
-  {
-    icon: FaInstagram,
-    url: "http://instagram.com/qian_amiao",
-    label: "Instagram",
-  },
+  { icon: FaGithub, url: "http://github.com/Qian0544", label: "GitHub" },
+  { icon: FaLinkedin, url: "http://www.linkedin.com/in/qian-zhao-590789293/", label: "LinkedIn" },
+  { icon: FaWhatsapp, url: "http://wa.me/+4793995384", label: "WhatsApp" },
+  { icon: FaInstagram, url: "http://instagram.com/qian_amiao", label: "Instagram" },
 ];
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const { lang, setLang } = useLanguage();
+  const t = translations[lang].navbar;
+
+  const navLinks = [
+    { title: t.about, path: "#about" },
+    { title: t.projects, path: "#projects" },
+    { title: t.contact, path: "#contact" },
+  ];
 
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-        {/* Social Icons - Replaces QIAN */}
         <div className="flex gap-4">
           {socialLinks.map((social, index) => {
             const Icon = social.icon;
@@ -69,31 +47,61 @@ const Navbar = () => {
           })}
         </div>
 
-        <div className="mobile-menu block md:hidden">
-          {!navbarOpen ? (
+        <div className="flex items-center gap-3">
+          {/* Language switcher */}
+          <div className="flex items-center gap-1 text-sm font-medium">
             <button
-              onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+              onClick={() => setLang("en")}
+              className={`px-2 py-0.5 rounded transition-colors ${
+                lang === "en"
+                  ? "text-white border border-primary-400"
+                  : "text-slate-400 hover:text-white"
+              }`}
             >
-              <Bars3Icon className="h-5 w-5" />
+              EN
             </button>
-          ) : (
+            <span className="text-slate-600">|</span>
             <button
-              onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+              onClick={() => setLang("no")}
+              className={`px-2 py-0.5 rounded transition-colors ${
+                lang === "no"
+                  ? "text-white border border-primary-400"
+                  : "text-slate-400 hover:text-white"
+              }`}
             >
-              <XMarkIcon className="h-5 w-5" />
+              NO
             </button>
-          )}
-        </div>
-        <div className="menu hidden md:block md:w-auto" id="navbar">
-          <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <NavLink href={link.path} title={link.title} />
-              </li>
-            ))}
-          </ul>
+          </div>
+
+          {/* Mobile menu toggle */}
+          <div className="mobile-menu block md:hidden">
+            {!navbarOpen ? (
+              <button
+                onClick={() => setNavbarOpen(true)}
+                className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+              >
+                <Bars3Icon className="h-5 w-5" />
+              </button>
+            ) : (
+              <button
+                onClick={() => setNavbarOpen(false)}
+                className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+              >
+                <XMarkIcon className="h-5 w-5" />
+              </button>
+            )}
+          </div>
+
+          {/* Desktop nav links */}
+          <div className="menu hidden md:block md:w-auto" id="navbar">
+            <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
+              {navLinks.map((link, index) => (
+                <li key={index}>
+                  <NavLink href={link.path} title={link.title} />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
