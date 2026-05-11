@@ -7,6 +7,10 @@ import { useLanguage } from "../context/LanguageContext";
 import translations from "../translations";
 
 const projectUrls = [
+  {
+    gitUrl: "/",
+    previewUrl: "https://chromewebstore.google.com/detail/fjhnjnhkfiilpgeihjpcckobeeaaaafd",
+  },
   { gitUrl: "/", previewUrl: "http://qianzhao.no/" },
   { gitUrl: "/", previewUrl: "http://eurodormswap.com/" },
   { gitUrl: "/", previewUrl: "http://www.dagligrenholdnittedal.no/" },
@@ -15,11 +19,12 @@ const projectUrls = [
   {
     gitUrl: "http://github.com/Qian0544/1-InteractiveMedia/tree/main/SoundDrawingTool",
     previewUrl: "/",
-    video: "/videos/projects/6.mp4",
+    video: "/videos/projects/7.mp4",
   },
 ];
 
 const projectImages = [
+  "/images/projects/7.png",
   "/images/projects/1.png",
   "/images/projects/2.png",
   "/images/projects/3.png",
@@ -29,6 +34,7 @@ const projectImages = [
 ];
 
 const projectTagKeys = [
+  ["all", "web"],
   ["all", "web"],
   ["all", "web"],
   ["all", "web"],

@@ -79,6 +79,11 @@ const translations = {
       tags: { all: "All", web: "Web", mobile: "Mobile" },
       items: [
         {
+          title: "NRK Language Learning Extension",
+          description:
+            "Chrome extension for NRK TV with click-to-translate subtitles, flashcard system, and Anki export — 50+ active users within one week of launch",
+        },
+        {
           title: "React Portfolio Website",
           description: "My personal portfolio website – updated regularly",
         },
@@ -203,6 +208,11 @@ const translations = {
       title: "Mine prosjekter",
       tags: { all: "Alle", web: "Web", mobile: "Mobil" },
       items: [
+        {
+          title: "NRK Språklæringsutvidelse",
+          description:
+            "Chrome-utvidelse for NRK TV med klikk-for-å-oversette undertekster, flashcard-system og Anki-eksport — 50+ aktive brukere innen én uke etter lansering",
+        },
         {
           title: "React Portfolio-nettside",
           description: "Min personlige portfolio-nettside - oppdateres jevnlig",
