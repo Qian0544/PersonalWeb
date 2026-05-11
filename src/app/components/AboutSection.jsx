@@ -2,7 +2,7 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
-import { HiDownload } from "react-icons/hi";
+import { HiExternalLink } from "react-icons/hi";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../translations";
 
@@ -55,10 +55,10 @@ const AboutSection = () => {
     <div className="grid grid-cols-1 gap-6">
       {t.recommendations.map((rec, i) => (
         <div key={i}>
-          <a href={rec.file} download={rec.filename} className="group">
+          <a href={`/view?file=${rec.file}`} target="_blank" rel="noopener noreferrer" className="group">
             <h3 className="font-semibold text-white mb-2 hover:text-primary-400 transition-colors flex items-center gap-2">
               {rec.title}
-              <HiDownload className="w-4 h-4" />
+              <HiExternalLink className="w-4 h-4" />
             </h3>
           </a>
           <p className="text-gray-400 text-sm lg:text-base italic border-l-2 border-primary-500 pl-4">

@@ -81,7 +81,7 @@ const translations = {
         {
           title: "NRK Language Learning Extension",
           description:
-            "Chrome extension for NRK TV with click-to-translate subtitles, flashcard system, and Anki export — 50+ active users within one week of launch",
+            "Chrome extension for NRK TV with click-to-translate subtitles, flashcard system, and Anki export, 50+ active users within one week of launch",
         },
         {
           title: "React Portfolio Website",
@@ -209,9 +209,9 @@ const translations = {
       tags: { all: "Alle", web: "Web", mobile: "Mobil" },
       items: [
         {
-          title: "NRK Språklæringsutvidelse",
+          title: "NRK Language Learning Extension",
           description:
-            "Chrome-utvidelse for NRK TV med klikk-for-å-oversette undertekster, flashcard-system og Anki-eksport — 50+ aktive brukere innen én uke etter lansering",
+            "Chrome-utvidelse for NRK TV med klikk-for-å-oversette undertekster, flashcard-system og Anki-eksport, 50+ aktive brukere innen én uke etter lansering",
         },
         {
           title: "React Portfolio-nettside",

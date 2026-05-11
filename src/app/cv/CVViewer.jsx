@@ -6,7 +6,7 @@ import "react-pdf/dist/Page/TextLayer.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
-export default function CVViewer() {
+export default function CVViewer({ file = "/CV.pdf" }) {
   const [numPages, setNumPages] = useState(null);
   const [pageWidth, setPageWidth] = useState(800);
 
@@ -19,7 +19,7 @@ export default function CVViewer() {
 
   return (
     <Document
-      file="/CV.pdf"
+      file={file}
       onLoadSuccess={({ numPages }) => setNumPages(numPages)}
       className="flex flex-col items-center gap-6"
     >
